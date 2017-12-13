@@ -426,7 +426,7 @@ namespace steem { namespace chain {
          const std::string& get_json_schema() const;
 
          void set_flush_interval( uint32_t flush_blocks );
-         void show_free_memory( bool force, uint32_t current_block_num );
+         void check_free_memory( bool force_print, uint32_t current_block_num );
 
 #ifdef IS_TEST_NET
          bool liquidity_rewards_enabled = true;
@@ -445,7 +445,7 @@ namespace steem { namespace chain {
          vector< asset_symbol_type > get_smt_next_identifier();
 
          ///@}
-#endif         
+#endif
 
    protected:
          //Mark pop_undo() as protected -- we do not want outside calling pop_undo(); it should call pop_block() instead
